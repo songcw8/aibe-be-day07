@@ -5,6 +5,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.file.Path;
 import java.util.Map;
 
 public abstract class WebClient implements IWebClient {
@@ -16,8 +17,11 @@ public abstract class WebClient implements IWebClient {
     }
 
     @Override
-    public HttpRequest makeRequest(String url, String body, Map<String, String> headers) {
-        return null;
+    public HttpRequest makeRequest(String path, HttpMethod method, String body, String... headers) {
+        return HttpRequest.newBuilder().uri(URI.create(path))
+                .method(method.name, HttpRequest.BodyPublishers.ofString(body))
+                .headers(headers)
+                .build();
     }
 }
 
@@ -28,5 +32,14 @@ interface IWebClient {
     // body를 받을 것이다
     String sendRequest(HttpRequest request) throws IOException, InterruptedException;
 
-    HttpRequest makeRequest(String url, String body, Map<String, String> headers);
+    HttpRequest makeRequest(String path, HttpMethod method, String body, String... headers);
+
+    enum HttpMethod {
+        GET("GET"), POST("POST");
+        final String name;
+
+        HttpMethod(String method) {
+            this.name = method;
+        }
+    }
 }
