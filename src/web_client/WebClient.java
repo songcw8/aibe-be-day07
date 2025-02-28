@@ -1,16 +1,18 @@
 package web_client;
 
+import java.io.IOException;
+import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.Map;
 
 public abstract class WebClient implements IWebClient {
-    public WebClient() {
-    }
 
     @Override
-    public String sendRequest(HttpRequest request) {
-        return "";
+    public String sendRequest(HttpRequest request) throws IOException, InterruptedException {
+        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
     }
 
     @Override
@@ -24,7 +26,7 @@ interface IWebClient {
     HttpClient httpClient = HttpClient.newBuilder().build();
 
     // body를 받을 것이다
-    String sendRequest(HttpRequest request);
+    String sendRequest(HttpRequest request) throws IOException, InterruptedException;
 
     HttpRequest makeRequest(String url, String body, Map<String, String> headers);
 }
