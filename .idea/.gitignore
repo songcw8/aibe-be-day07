@@ -1,0 +1,8 @@
+# 디폴트 무시된 파일
+/../../../../데브코스 생성형 AI 백엔드/Java_Study/slack_llm/.idea/shelf/
+/../../../../데브코스 생성형 AI 백엔드/Java_Study/slack_llm/.idea/workspace.xml
+# 에디터 기반 HTTP 클라이언트 요청
+/../../../../데브코스 생성형 AI 백엔드/Java_Study/slack_llm/.idea/httpRequests/
+# Datasource local storage ignored files
+/../../../../데브코스 생성형 AI 백엔드/Java_Study/slack_llm/.idea/dataSources/
+/../../../../데브코스 생성형 AI 백엔드/Java_Study/slack_llm/.idea/dataSources.local.xml

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../데브코스 생성형 AI 백엔드/Java_Study/slack_llm">
+      <sourceFolder url="file://$MODULE_DIR$/../../../데브코스 생성형 AI 백엔드/Java_Study/slack_llm/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
