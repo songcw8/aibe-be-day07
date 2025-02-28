@@ -1,5 +1,5 @@
 import llm.*;
-import web_client.WebClient;
+import slack.Slack;
 
 public class Solution01 {
     public static void main(String[] args) {
@@ -13,6 +13,3 @@ public class Solution01 {
 
 
 
-class Slack extends WebClient {
-
-}
